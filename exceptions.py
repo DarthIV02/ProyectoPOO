@@ -1,0 +1,2 @@
+class HourFormatException(Exception):
+    pass

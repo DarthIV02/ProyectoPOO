@@ -1,18 +1,37 @@
+from exceptions import HourFormatException
+
+
 class Restaurant:
 	"""A class for restaurants"""
 
-	def __init__(self, restaurant_name, cuisine_type):  #All the attributes
+	def __init__(self, restaurant_name, cuisine_type, opening_hours="unknown"):  # All the attributes
 		self.restaurant_name = restaurant_name.title()
 		self.cuisine_type = cuisine_type
 		self.number_served = 0
+		self.opening_hours = opening_hours
 
 	def describe_restaurant(self):
 		"""Prints all of the atributes"""
 		print(f"\nThe resaturant name is: {self.restaurant_name}")
 		print(f"The cuisine type is: {self.cuisine_type}")
 
+	def set_opening_hours(self, opening_hour: int, closing_hour: int):
+		"""Manipulates the opening hours, the hour must be in 24 format"""
+		try:
+			if not 0 < opening_hour < 24 or not 0 < closing_hour < 24:
+				raise HourFormatException
+		except HourFormatException:
+			print("The hour must be in 24 format")
+		except TypeError:
+			print("Value must be integer")
+		else:
+			self.opening_hours = [opening_hour, closing_hour]
+
 	def open_restaurant(self):
 		print(f"The restaurant {self.restaurant_name} is now open")
+
+	def close_restaurant(self):
+		print(f"The restaurant {self.restaurant_name} is now closed")
 
 	def set_number_served(self, num):
 		"""Changes the number of cutomers"""
@@ -21,6 +40,11 @@ class Restaurant:
 	def increment_number_served(self, num):
 		"""Incrementes the number of cutomers"""
 		self.number_served += num
+
+
+if __name__ == "__main__":
+	my_restaurant = Restaurant("yokomi sushi", "japanese")
+	my_restaurant.set_opening_hours("a", "b")
 
 my_restaurant = Restaurant("yokomi sushi", "japanese")
 
