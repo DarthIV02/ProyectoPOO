@@ -2,7 +2,7 @@ from restaurant import Restaurant
 
 
 class IceCreamStand (Restaurant):
-	def __init__ (self, restaurant_name, cuisine_type, *flavors):  # Added flavors for the icecream
+	def __init__ (self, restaurant_name, cuisine_type, *flavors):  # Added flavors for the ice cream
 		super().__init__(restaurant_name, cuisine_type)
 		self.flavors = flavors
 
