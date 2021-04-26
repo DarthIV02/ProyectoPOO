@@ -53,29 +53,31 @@ class Restaurant:
 		self.number_served += num
 
 
-my_restaurant = Restaurant("yokomi sushi", "japanese")
+if __name__ == "__main__":
 
-print(my_restaurant.restaurant_name)
-print(my_restaurant.cuisine_type)
+	my_restaurant = Restaurant("yokomi sushi", "japanese")
 
-my_restaurant.set_opening_hours(16, 20)
-my_restaurant.check_if_restaurant_is_open()
+	print(my_restaurant.restaurant_name)
+	print(my_restaurant.cuisine_type)
 
-my_restaurant.describe_restaurant()
-my_restaurant.open_restaurant()
+	my_restaurant.set_opening_hours(16, 20)
+	my_restaurant.check_if_restaurant_is_open()
 
-your_restaurant = Restaurant("little cesar", "italian")
-your_restaurant.describe_restaurant()
+	my_restaurant.describe_restaurant()
+	my_restaurant.open_restaurant()
 
-her_restaurant = Restaurant("la toscana", "mexican")
-her_restaurant.describe_restaurant()
+	your_restaurant = Restaurant("little cesar", "italian")
+	your_restaurant.describe_restaurant()
 
-restaurant = Restaurant("Taikishi", "japanese")
-restaurant.describe_restaurant()
-print(restaurant.number_served)
-restaurant.number_served = 14
-print(restaurant.number_served)
-restaurant.set_number_served(25)
-print(restaurant.number_served)
-restaurant.increment_number_served(75)
-print(restaurant.number_served)
+	her_restaurant = Restaurant("la toscana", "mexican")
+	her_restaurant.describe_restaurant()
+
+	restaurant = Restaurant("Taikishi", "japanese")
+	restaurant.describe_restaurant()
+	print(restaurant.number_served)
+	restaurant.number_served = 14
+	print(restaurant.number_served)
+	restaurant.set_number_served(25)
+	print(restaurant.number_served)
+	restaurant.increment_number_served(75)
+	print(restaurant.number_served)
